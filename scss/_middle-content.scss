@@ -1,0 +1,132 @@
+#middle-content {
+	@include grid(3.5fr 10fr 10fr 10fr 3.5fr, 121px 317px 317px 317px, 16px);
+	grid-template-areas:
+		'. port     port  port . '
+		'. p1      p2   p3   .'
+		'. knowledge      knowledge    p4  .'
+		'. p7      p6   p5 . ';
+
+	text-align: center;
+
+	@include tablet {
+		@include grid(1fr 20fr 20fr 1fr, 121px 300px 300px 300px 300px 300px, 16px);
+		grid-template-areas:
+			'. port   port  .  '
+			'.  p1  p2   . '
+			'. p3 p4 .'
+			'. p5 p6.'
+			'.  p7 p7 .'
+			'. knowledge knowledge . ';
+	}
+
+	@include phone {
+		@include grid(
+			1fr 20fr 1fr,
+			121px 300px 300px 300px 300px 300px 300px 300px 300px,
+			16px
+		);
+		grid-template-areas:
+			'.    port  .  '
+			'.  p1     . '
+			'. p2 .'
+			'. p3 .'
+			'. p4 .'
+			'. p5 .'
+			'. p6 .'
+			'. p7 .'
+			'. knowledge . ';
+	}
+	.app {
+		transition: all 0.3s;
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+
+	.line-head {
+		grid-area: port;
+		color: $cF35;
+		:last-child {
+			opacity: 50%;
+		}
+
+		h2 {
+			color: $cF35;
+		}
+	}
+
+	.p_1 {
+		grid-area: p1;
+		background: url(/img/p_1.png) no-repeat center center / cover;
+	}
+	.p_2 {
+		grid-area: p2;
+		background: url(/img/p_2.png) no-repeat center center / cover;
+	}
+	.p_3 {
+		grid-area: p3;
+		background: url(/img/p_3.png) no-repeat center center / cover;
+	}
+	.p_4 {
+		grid-area: p4;
+		background: url(/img/p_4.png) no-repeat center center / cover;
+	}
+	.p_5 {
+		grid-area: p5;
+		background: url(/img/p_5.png) no-repeat center center / cover;
+	}
+	.p_6 {
+		grid-area: p6;
+		background: url(/img/p_6.png) no-repeat center center / cover;
+	}
+	.p_7 {
+		grid-area: p7;
+		background: url(/img/p_7.png) no-repeat center center / cover;
+	}
+
+	.portfolio {
+		@include flex(center, center, column);
+		grid-area: knowledge;
+		position: relative;
+		background: $cP;
+		z-index: 1;
+
+		i {
+			transform: scale(120deg);
+		}
+
+		.portfolio-text {
+			max-width: 458px;
+			:first-child {
+				&:hover {
+					color: $cF35;
+				}
+			}
+			:last-child {
+				opacity: 50%;
+				color: #f3f3f3;
+			}
+		}
+
+		.viewOpen {
+			position: absolute;
+			color: #f3f3f3;
+			right: 19.5px;
+			bottom: 16.5px;
+			font-size: 11px;
+
+			&:hover {
+				color: $cF35;
+			}
+			&:active {
+				color: $cH;
+			}
+
+			i {
+				transform: rotate(270deg);
+				font-size: 22px;
+				margin-left: 10px;
+			}
+		}
+	}
+}

@@ -1,0 +1,89 @@
+#experience {
+	@include grid(3.5fr 5fr 5fr 5fr 3.5fr, 78px 462px 100px, 14px);
+	grid-template-areas:
+		'. . . . . '
+		' . time work satisfaction . '
+		'. . . . .';
+	@include laptop {
+		@include grid(1fr 5fr 5fr 5fr 1fr, 78px 462px 100px, 14px);
+	}
+	@include tablet {
+		grid-template-areas:
+			'.  . . '
+			' . time     . '
+			'. work  .'
+			'. satisfaction   .'
+			'  . . .';
+		@include grid(1fr 10fr 1fr, 78px 262px 262px 262px 100px, 14px);
+	}
+	@include phone {
+		@include grid(1fr 20fr 1fr, 50px 262px 262px 262px 75px, 14px);
+	}
+
+	i {
+		color: $cP;
+	}
+
+	.main-purpose {
+		max-width: 148px;
+		height: 113px;
+		text-align: center;
+		color: $cO;
+		font-size: 14px;
+
+		:last-child {
+			opacity: 50%;
+		}
+		:first-child {
+			display: block;
+			color: $cO;
+			margin-bottom: 10px;
+			font-size: 18px;
+		}
+	}
+
+	.more {
+		@include flex(space-around, center, column);
+		@include shadowB();
+		transition: all 0.3s;
+		&:hover {
+			transform: scale(1.05);
+		}
+		i {
+			font-size: 45px;
+		}
+	}
+	.onTime {
+		grid-area: time;
+		.learn-time {
+			padding: 6px 40px;
+			color: $cW;
+			background-color: $cP;
+			&:hover {
+				background: $cH;
+			}
+		}
+	}
+	.clean-Work {
+		grid-area: work;
+		.learn-work {
+			padding: 6px 40px;
+			color: $cW;
+			background-color: $cP;
+			&:hover {
+				background: $cH;
+			}
+		}
+	}
+	.client-Satisfaction {
+		grid-area: satisfaction;
+		.learn-satisfaction {
+			padding: 6px 40px;
+			color: $cW;
+			background-color: $cP;
+			&:hover {
+				background: $cH;
+			}
+		}
+	}
+}

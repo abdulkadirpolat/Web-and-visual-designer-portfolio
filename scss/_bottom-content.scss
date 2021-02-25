@@ -1,0 +1,143 @@
+#bottom-content {
+	@include grid(4fr 10fr 4fr, 420px 160px, none);
+	grid-template-areas:
+		'. subText .'
+		'subMenu  subMenu subMenu';
+	text-align: center;
+
+	@include tablet {
+		@include grid(2fr 10fr 2fr, 380px 160px, none);
+	}
+
+	@include phone {
+		@include grid(1fr, 420px 110px, none);
+		grid-template-areas:
+			'  subText  '
+			'   subMenu  ';
+	}
+	.sub-title {
+		@include flex(space-around, center, column);
+		grid-area: subText;
+
+		.request {
+			:first-child {
+				color: $cO;
+				font-weight: 400;
+			}
+			:last-child {
+				color: #2020207a;
+			}
+		}
+
+		.login-here {
+			@include wh($pF, 55px);
+			position: relative;
+			overflow: hidden;
+			cursor: pointer;
+			max-width: 567px;
+			margin-bottom: 100px;
+			@include tablet {
+				height: 50px;
+				max-width: 90%;
+			}
+
+			@include phone {
+				height: 40px;
+				max-width: 90%;
+			}
+			.login {
+				@include wh($pF, $pF);
+				border: none;
+				border: #744df7 solid 1px;
+				outline: none;
+				z-index: 2;
+			}
+
+			:first-child {
+				@include laptop {
+					max-width: 90px;
+					line-height: 55px;
+				}
+
+				@include tablet {
+					line-height: 50px;
+				}
+
+				@include phone {
+					max-width: 80px;
+					line-height: 40px;
+				}
+				position: absolute;
+				border: none;
+				user-select: none;
+				max-width: 184px;
+				line-height: 55px;
+				z-index: 3;
+				bottom: 0;
+				right: 0;
+				color: $cW;
+				width: $pF;
+				background-color: $cP;
+
+				&:hover {
+					background-color: $cH;
+				}
+			}
+		}
+	}
+	.sub-menu {
+		@include tablet {
+			h2 {
+				display: none;
+			}
+			.sub-links {
+				display: none;
+			}
+			.media-links {
+				min-width: 100%;
+			}
+		}
+		@include flex(space-around, center, row);
+		user-select: none;
+		grid-area: subMenu;
+		background-color: $cP;
+		h2 {
+			&:hover {
+				color: $cF35;
+			}
+		}
+		ul {
+			@include flex(space-around, center, row);
+		}
+		i {
+			font-size: 20px;
+			color: $cW;
+		}
+		.sub-links {
+			width: 100%;
+			max-width: 334px;
+			a {
+				&:hover {
+					color: $cW;
+				}
+
+				color: rgba(255, 255, 255, 0.75);
+				font-size: 15px;
+			}
+		}
+		.media-links {
+			width: 100%;
+			max-width: 115px;
+			i {
+				&:hover {
+					color: $cF35;
+				}
+				@include phone {
+					&:active {
+						color: $cH;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,113 @@
+.reference-menu {
+	grid-template-areas: '. reference . ';
+	@include grid(4fr 10fr 4fr, 763px, none);
+	color: $cO;
+	@include tablet{
+		grid-template-areas: '. reference . ';
+	@include grid(2fr 10fr 2fr, 763px, none);
+}
+@include phone{
+		grid-template-areas: ' reference  ';
+	@include grid(1fr, 763px, none);
+}
+	.reference-card {
+		@include flex(space-evenly, center, column);
+		text-align: center;
+		grid-area: reference;
+		height: 100%;
+		.reference-title {
+			h2 {
+				color: $cO;
+				font-weight: 400;
+			}
+			:last-child {
+				opacity: 0.5;
+				font-size: 18px;
+			}
+		}
+
+		.references {
+			@include phone{
+				@include wh(90%, 362px);
+			}
+			@include flex(space-evenly, center, column);
+			@include shadowB();
+			@include wh(100%, 362px);
+			position: relative;
+			background-color: $cW;
+
+			.person {
+
+				@include tablet{
+				@include wh(115px, 115px);
+			 
+			}
+
+				@include phone{
+				@include wh(100px, 100px);
+			 
+			}
+				@include flex(center, center, 0);
+				@include wh(138px, 138px);
+				transition: all 0.3s;
+				user-select: none;
+				background: #764ef975;
+				border-radius: 50%;
+				&:hover {
+					transform: scale(1.05);
+				}
+				.photo-hive {
+					@include flex(center, center, 0);
+					@include wh(80%, 80%);
+					background: #764ef975;
+					border-radius: 50%;
+					.hive {
+						@include wh(85%, 85%);
+						background: url(img/person.png) no-repeat center center / cover;
+					}
+				}
+			}
+			.back-card {
+				@include wh(106%, 321px);
+				position: absolute;
+				z-index: -1;
+				bottom: 17px;
+				right: -3%;
+				left: -3%;
+				background-color: $cP;
+			}
+			.reference-text {
+				overflow: hidden;
+				max-width: 595px;
+				min-height: 121px;
+				:last-child {
+					opacity: 0.5;
+				}
+				:first-child {
+					display: block;
+					font-size: 18px;
+					margin-bottom: 10px;
+				}
+			}
+		}
+		.selection {
+			.switch {
+			 
+				@include wh(11px, 11px);
+				cursor: $pC;
+				display: inline-block;
+				user-select: none;
+				margin: 5px;
+				border-radius: 50%;
+				opacity: 0.15;
+				background-color: $cP;
+
+				&:hover {
+					transform: scale(1.2);
+					background-color: $cP;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

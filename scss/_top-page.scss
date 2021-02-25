@@ -1,0 +1,287 @@
+.top-page {
+	user-select: none;
+	grid-template-areas:
+		'portfolio  links  follow'
+		'portfolio work-body  follow  ';
+	@include grid(450px 1fr 35px, 100px 730px, none);
+
+	@include laptop {
+		@include grid(325px 1fr 35px, 100px 730px, none);
+		@media screen and (max-width: 880px) {
+			@include grid(325px 1fr 35px, 100px 730px, none);
+		}
+	}
+	@include tablet {
+		@include grid(1fr, 550px, none);
+		grid-template-areas: 'portfolio';
+	}
+	@include tablet {
+		@include grid(1fr, 400px, none);
+		grid-template-areas: 'portfolio';
+	}
+	.menu-text {
+		grid-area: links;
+		@include tablet {
+			display: none;
+		}
+
+		@include phone {
+			display: none;
+		}
+		.menu-content {
+			height: 100px;
+			@media screen and (max-width: 880px) {
+				@include flex(flex-start, center, row);
+				flex-wrap: wrap;
+			}
+			@include flex(flex-end, center, row);
+
+			.topLink {
+				color: $cR;
+				&:hover {
+					border-bottom: 1px solid $cP;
+					color: $cP;
+				}
+			}
+			#cv {
+				&:hover {
+					background-color: $cH;
+				}
+				border: none;
+			}
+			:last-child {
+				margin-left: 42px;
+
+				:first-child {
+					@media screen and (max-width: 880px) {
+						padding: 15px 30px;
+					}
+
+					margin-left: -10px;
+					padding: 15px 50px;
+					background: $cP;
+					color: $cW;
+					border-radius: 50px;
+				}
+			}
+		}
+	}
+	.side-fallow {
+		grid-area: follow;
+		border-bottom: 15px solid $cP;
+		width: 35px;
+		@include flex(center, center, 0);
+		@include tablet {
+			display: none;
+		}
+
+		.fallow {
+			@include flex(flex-end, center, column);
+			height: 550px;
+			width: 35px;
+			:last-child {
+				margin-bottom: 45px;
+			}
+			i {
+				color: $cP;
+				font-size: 18px;
+				&:active {
+					font-size: 15px;
+				}
+				&:hover {
+					font-size: 20px;
+					color: $cH;
+				}
+			}
+			position: relative;
+			.fallowMe {
+				width: 170px;
+				font-size: 18px;
+				position: absolute;
+				top: 230px;
+				transform: rotate(90deg);
+				color: $cP;
+			}
+			hr {
+				bottom: 215px;
+				position: absolute;
+				transform: rotate(90deg);
+				@include wh(55px, 1px);
+			}
+
+			li {
+				height: 30px;
+				transform: rotate(0deg);
+				margin-top: 18.5px;
+			}
+		}
+	}
+	.main-Work {
+		@include tablet {
+			display: none;
+		}
+
+		grid-area: work-body;
+		background-color: $cW;
+
+		border-bottom: 15px solid $cP;
+		.header-work {
+			margin-right: auto;
+			margin-left: auto;
+			@include laptop {
+				min-width: 350px;
+			}
+			@include tablet {
+				width: 350px;
+			}
+			min-width: 447px;
+
+			.myWork {
+				transform: translate(10px, 220px);
+				.myCenter {
+					text-align: center;
+
+					:nth-last-child(1) {
+						font-size: 25px;
+						color: $cR;
+					}
+					.headline {
+						@include laptop {
+							height: 100px;
+						}
+
+						font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+							'Lucida Sans', Arial, sans-serif;
+						font-weight: bold;
+						transition: all 0.3s;
+						height: 130px;
+
+						&:hover {
+							transform: scale(1.05);
+						}
+
+						:nth-of-type(1) {
+							@include laptop {
+								font-size: 70px;
+							}
+							color: $cB;
+							font-size: 100px;
+
+							&:hover {
+								color: $cH;
+							}
+						}
+
+						:nth-of-type(2) {
+							@include laptop {
+								font-size: 70px;
+							}
+							color: $cP;
+							font-size: 100px;
+							&:hover {
+								color: $cF35;
+							}
+						}
+					}
+				}
+			}
+			.intro {
+				@include flex(space-between, center, 0);
+				@include wh(182px, 78px);
+				position: absolute;
+				right: 18%;
+				bottom: -150px;
+
+				:last-child {
+					color: $cB;
+				}
+
+				.myIntro {
+					@include wh(78px, 78px);
+					@include flex(center, center, 0);
+					box-shadow: #764ef93a 0 5px 15px;
+					border-radius: 50%;
+					transition: 0.3s;
+					&:hover {
+						transform: scale(1.05);
+					}
+					&:active {
+						i {
+							color: $cF35;
+						}
+					}
+
+					i {
+						font-size: 17px;
+						color: $cP;
+						&:hover {
+							transform: scale(1.1);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.main-portfolio {
+		grid-area: portfolio;
+		background-color: $cP;
+		@include flex(space-around, center, column);
+		:first-child {
+			&:hover {
+				color: $cF35;
+			}
+		}
+		:last-child {
+			color: $cW;
+		}
+
+		.header-photo {
+			@include flex(center, center, none);
+			@include wh(513px, 513px);
+			background-color: $cP;
+			z-index: 1;
+			border-radius: $pF;
+			transform: translateX(83px);
+			@include laptop {
+				transform: translateX(20%);
+				@include wh(400px, 400px);
+			}
+			@include tablet {
+				transform: translateX(0%);
+				@include wh(300px, 300px);
+			}
+			@include phone {
+				@include wh(200px, 200px);
+			}
+			.line-around {
+				@include flex(center, center, none);
+				@include wh(95%, 95%);
+				border-radius: $pF;
+				z-index: 2;
+				background: $cW;
+
+				.inner-line {
+					@include flex(center, center, none);
+					@include wh(70%, 70%);
+					transition: all 0.3s;
+					background: $cP;
+					border-radius: $pF;
+
+					&:hover {
+						transform: scale(1.05);
+					}
+
+					.portfolio-photo {
+						@include flex(center, center, none);
+						@include wh(85%, 85%);
+						background: url(img/portfolio_f1.png) no-repeat center center /
+							cover;
+						z-index: 5;
+						border-radius: $pF;
+					}
+				}
+			}
+		}
+	}
+}
