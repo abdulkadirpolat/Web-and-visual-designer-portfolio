@@ -809,42 +809,42 @@ h2 {
   -ms-grid-row: 2;
   -ms-grid-column: 3;
   grid-area: p2;
-  background: url(/img/p_2.png) no-repeat center center/cover;
+  background: url(img/p_2.png) no-repeat center center/cover;
 }
 
 #middle-content .p_3 {
   -ms-grid-row: 2;
   -ms-grid-column: 4;
   grid-area: p3;
-  background: url(/img/p_3.png) no-repeat center center/cover;
+  background: url(img/p_3.png) no-repeat center center/cover;
 }
 
 #middle-content .p_4 {
   -ms-grid-row: 3;
   -ms-grid-column: 4;
   grid-area: p4;
-  background: url(/img/p_4.png) no-repeat center center/cover;
+  background: url(img/p_4.png) no-repeat center center/cover;
 }
 
 #middle-content .p_5 {
   -ms-grid-row: 4;
   -ms-grid-column: 4;
   grid-area: p5;
-  background: url(/img/p_5.png) no-repeat center center/cover;
+  background: url(img/p_5.png) no-repeat center center/cover;
 }
 
 #middle-content .p_6 {
   -ms-grid-row: 4;
   -ms-grid-column: 3;
   grid-area: p6;
-  background: url(/img/p_6.png) no-repeat center center/cover;
+  background: url(img/p_6.png) no-repeat center center/cover;
 }
 
 #middle-content .p_7 {
   -ms-grid-row: 4;
   -ms-grid-column: 2;
   grid-area: p7;
-  background: url(/img/p_7.png) no-repeat center center/cover;
+  background: url(img/p_7.png) no-repeat center center/cover;
 }
 
 #middle-content .portfolio {
