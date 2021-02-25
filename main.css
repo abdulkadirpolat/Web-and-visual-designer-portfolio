@@ -802,7 +802,7 @@ h2 {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: p1;
-  background: url(/img/p_1.png) no-repeat center center/cover;
+  background: url(img/p_1.png) no-repeat center center/cover;
 }
 
 #middle-content .p_2 {
